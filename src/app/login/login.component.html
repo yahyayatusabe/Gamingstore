@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+
+<div class="container">
+    <h1>Login GamingStore</h1>
+</div>
+<div class="container">
+<form #loginform="ngForm" (ngSubmit)="loginUser()">
+  
+    <div class="form-group">
+      <label for="exampleInputEmail1">Nombre de Usuario:</label>
+      <input type="text" class="form-control" name="usuarioclie" aria-describedby="usuarioclienteHelp" placeholder="Introduzca su nombre de cliente" [(ngModel)]="cliente.usuarioclie" required #usuarioclie="ngModel" [class.is-invalid]="usuarioclie.touched && usuarioclie.invalid">
+      <small class="text-danger" [class.d-none]="usuarioclie.valid || usuarioclie.untouched  ">Esta campo es requerido.</small>
+      
+    </div>
+    
+    <div class="form-group">
+      <label for="exampleInputPassword1">Contraseña:</label>
+      <input type="password" class="form-control" name="contraseñacliente" placeholder="Introduzca su contraseña" [(ngModel)]="cliente.passwordclie" required #passwordclie="ngModel" [class.is-invalid]="passwordclie.touched && passwordclie.invalid">
+      <small class="text-danger" [class.d-none]="passwordclie.valid || passwordclie.untouched  ">Esta campo es requerido.</small><br>
+    </div>
+    <button type="submit" class="btn btn-primary" >Login</button> <small style="float: right;" [routerLink]="['/registrer']">¿cliente nuevo? <u>Registrate aquí</u> </small>
+    <br>
+   
+    
+  </form>
+</div>
+<p style="text-align: center;"><span class="text-danger">{{msg2}}</span>  </p>

@@ -1,0 +1,73 @@
+
+<div class="container">
+    <h1>Registrate aquí</h1>
+</div>
+<div class="container">
+<form #loginform="ngForm" (ngSubmit)="registerCliente()">
+
+  <div class="form-group">
+    <label for="examaplenombreclie">Nombre y Primer Apellido:</label>
+    <input type="text" class="form-control" name="nombreclie"  placeholder="Introduzca (Su Nombre + (espacio en blanco + Primer Apellido))" [(ngModel)]="cliente.nombreclie" required #nombreclie="ngModel" [class.is-invalid]="nombreclie.touched && nombreclie.invalid" >
+    <small class="text-danger" [class.d-none]="nombreclie.valid || nombreclie.untouched  ">Esta campo es requerido.</small><br>
+  </div>
+
+    <div class="form-group">
+      <label for="examapledireccionclie">Linea de Direccion:</label>
+      <input type="text" class="form-control" name="direccionclie"  placeholder="Introduzca su Direccion" [(ngModel)]="cliente.direccionclie" required #direccionclie="ngModel" [class.is-invalid]="direccionclie.touched && direccionclie.invalid" >
+      <small class="text-danger" [class.d-none]="direccionclie.valid || direccionclie.untouched  ">Esta campo es requerido.</small><br>
+    </div>
+
+
+    <div class="form-group">
+      <label for="examapleciudadclie">Ciudad/Provencia:</label>
+      <input type="text" class="form-control" name="ciudadclie"  placeholder="Introduzca su Ciudad" [(ngModel)]="cliente.ciudadclie" required #ciudadclie="ngModel" [class.is-invalid]="ciudadclie.touched && ciudadclie.invalid" >
+      <small class="text-danger" [class.d-none]="ciudadclie.valid || ciudadclie.untouched  ">Esta campo es requerido.</small><br>
+    </div>
+
+    <div class="form-group">
+      <label for="examaplecpclie">Codigo Postal:</label>
+      <input type="text" class="form-control" name="cpclie"  placeholder="Introduzca su Codigo Postal" [(ngModel)]="cliente.cpclie" required #cpclie="ngModel" [class.is-invalid]="cpclie.touched && cpclie.invalid" >
+      <small class="text-danger" [class.d-none]="cpclie.valid || cpclie.untouched  ">Esta campo es requerido.</small><br>
+    </div>
+
+    <div class="form-group">
+      <label for="examapletelefonoclie">Numero de Telefono:</label>
+      <input type="text" class="form-control" name="telefonoclie"  placeholder="Introduzca su Numero de Telefono" [(ngModel)]="cliente.telefonoclie" required #telefonoclie="ngModel" [class.is-invalid]="telefonoclie.touched && telefonoclie.invalid" >
+      <small class="text-danger" [class.d-none]="telefonoclie.valid || telefonoclie.untouched  ">Esta campo es requerido.</small><br>
+    </div>
+
+    <div class="form-group">
+      <label for="examapleemailclie">Correo Electronico:</label>
+      <input type="text" class="form-control" name="emailclie"  placeholder="Introduzca su Correo Electronico" [(ngModel)]="cliente.emailclie" required #emailclie="ngModel" [class.is-invalid]="emailclie.touched && emailclie.invalid" >
+      <small class="text-danger" [class.d-none]="emailclie.valid || emailclie.untouched  ">Esta campo es requerido.</small><br>
+    </div>
+
+    <div class="form-group">
+      <label for="examaplefechanacclie">Fecha de Nacimiento:</label>
+      <input type="date" class="form-control" name="ciudadclie"  placeholder="Introduzca su Fecha de Nacimiento" [(ngModel)]="cliente.fechanacclie" required #fechanacclie="ngModel" [class.is-invalid]="fechanacclie.touched && fechanacclie.invalid" >
+      <small class="text-danger" [class.d-none]="fechanacclie.valid || fechanacclie.untouched  ">Esta campo es requerido.</small><br>
+    </div>
+
+    <div class="form-group">
+      <label for="examapleususarioclie">Nombre de usuario:</label>
+      <input type="text" class="form-control" name="ususarioclie"  placeholder="Introduzca su Nombre de Usuario" [(ngModel)]="cliente.usuarioclie" required #ususarioclie="ngModel" [class.is-invalid]="ususarioclie.touched && ususarioclie.invalid" >
+      <small class="text-danger" [class.d-none]="ususarioclie.valid || ususarioclie.untouched  ">Esta campo es requerido.</small><br>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputpasswordclie">Contraseña:</label>
+      <input type="text" class="form-control" name="passwordclie" required="required" placeholder="Introduzca su contraseña" [(ngModel)]="cliente.passwordclie" required #passwordclie="ngModel" [class.is-invalid]="passwordclie.touched && passwordclie.invalid"> 
+      <small class="text-danger" [class.d-none]="passwordclie.valid || passwordclie.untouched  ">Esta campo es requerido.</small><br>
+    </div>
+
+    <div class="form-group">
+      <label for="examaplenumtarjclie">Numero de Tarjeta de credito:</label>
+      <input type="text" class="form-control" name="numtarjclie"  placeholder="Introduzca su Numero deTarjeta de Credito" [(ngModel)]="cliente.numtarjclie" required #numtarjclie="ngModel" [class.is-invalid]="numtarjclie.touched && numtarjclie.invalid" >
+      <small class="text-danger" [class.d-none]="numtarjclie.valid || numtarjclie.untouched  ">Esta campo es requerido.</small><br>
+    </div>
+
+<button type="submit" class="btn btn-primary">Registrarse</button>
+<small style="float: right;" [routerLink]="['/session']">¿Ya tienes una cuenta? <u>Inicia sesin aquí</u> </small>
+</form>
+</div>
+<p style="text-align: center;"><span class="text-danger" [class.d-none]="">{{msg}}</span>  </p> 

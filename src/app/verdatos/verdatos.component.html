@@ -1,0 +1,63 @@
+<div class="container" >
+
+    <div class="card" style="width: 30rem;">
+        <div class="card-body">
+          <h5 class="card-title">Datos del perfil</h5>
+
+            <tbody>
+                <tr>
+                    <th>Id:</th>
+                    <td>{{idcrud}}</td>
+                </tr>
+                <tr>
+                 <th>Nombre: </th>
+                 <td>{{nombreclie}}</td>
+             </tr>
+             <tr>
+                 <th>Direccion: </th>
+                 <td>{{direccionclie}}</td>
+             </tr>
+             <tr>
+                 <th>Ciudad:</th>
+                 <td>{{ciudadclie}}</td>
+             </tr>
+             <tr>
+                 <th>Codigo Postal:</th>
+                 <td>{{cpclie}}</td>
+             </tr>
+             <tr>
+                 <th>Telefono:</th>
+                 <td>{{telefonoclie}}</td>
+             </tr>
+             <tr>
+                 <th>Correo:</th>
+                 <td>{{emailclie}}</td>
+             </tr>
+             <tr>
+                 <th>Fecha de nacimiento:</th>
+                 <td>{{fechanacclie}}</td>
+             </tr>
+             <tr>
+                <th>Nombre de Usuario:</th>
+                <td>{{usuarioclie}}</td>
+            </tr>
+
+            <tr>
+                <th>Numero de Tarjeta:</th>
+                <td>{{numtarjclie}}</td>
+            </tr>
+
+            </tbody>
+        </div>
+
+
+
+
+
+
+
+
+          <a href="#" class="btn btn-primary" [routerLink]="['/editarperfil/'+idcrud]">Editar </a>
+          <a href="#" class="btn btn-primary" [routerLink]="['/crud']" style="float:right;">Volver</a>
+        </div>
+      </div>

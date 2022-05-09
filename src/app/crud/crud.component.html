@@ -1,0 +1,46 @@
+
+
+ 
+
+
+<div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Direccion</th>
+          <th scope="col">Ciudad</th>
+          <th scope="col">Codigo Postal</th>
+          <th scope="col">Telefono</th>
+          <th scope="col">Correo</th>
+          <th scope="col">Fecha de nacimiento</th>
+          <th scope="col">Nombre Usuario</th>
+          <th scope="col">Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cliente of listaclientes | paginate: { itemsPerPage: 5, currentPage:pageActual }; let i = index">
+          <th scope="row">{{cliente.id}}</th>
+          <td>{{cliente.nombreclie}}</td>
+          <td>{{cliente.direccionclie}}</td>
+          <td>{{cliente.ciudadclie}}</td>
+          <td>{{cliente.cpclie}}</td>
+          <td>{{cliente.telefonoclie}}</td>
+          <td>{{cliente.emailclie}}</td>
+          <td>{{cliente.fechanacclie}}</td>
+          <td>{{cliente.usuarioclie}}</td>
+          <td>
+            <button type="button" class="btn btn-primary" (click)="editarCliente(cliente.id)" >Editar</button>
+            <button type="button" class="btn btn-danger" (click)="eliminarCliente(cliente.id,i)" >Eliminar</button>
+  
+  
+  
+          </td>
+        </tr>
+        <small style="float: right;" [routerLink]="['/home']">¿Quieres volver a la pagina principal? <u>Click aquí</u> </small>
+        <small style="float: right;" (click)="Logout()"><u>Log Out</u> </small>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+    
